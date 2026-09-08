@@ -52,3 +52,16 @@
 运行 `python scripts/validate_evidence.py` 可从逐轨迹记录重新核对分母、达标数、
 配对技能次数、哈希以及历史分组加权指标。图表由 `scripts/render_charts.py` 从同一 JSON 生成。
 图表使用零起点条形图；延迟采用明确标注的对数散点图，完整展示 24 个起点。
+
+## 时间与计算开销总览图
+
+运行 `python scripts/render_solver_comparison.py` 生成 `assets/solver-comparison.png`，
+用于 README 的传统本地搜索与 G1 总览。两面板均采用零起点条形图，并直接标注数值：
+
+- 单次决策时间：从全部 24 条 `sameStateDecisionTimings` 分别计算 `nativeSearchMs`
+  与 `modelDecisionMedianMs` 的中位数，单位为毫秒；比值约 1,135 倍。
+- 续作累计计算开销：从每种方法的 48 条 `trajectories` 累加全部 `decisionMs`，
+  除以 1,000 转为秒，包含失败与提前停止的轨迹。
+
+后者是各自运行的计算开销记录，两方法访问的状态与动作数不同，不能解释为同等工作量吞吐、
+有效方案生成效率、完整制作速度或费用的加速倍数。逐状态差异仍由原有延迟散点图展示。

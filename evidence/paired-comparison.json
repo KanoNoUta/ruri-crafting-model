@@ -1,0 +1,39 @@
+{
+  "all": {
+    "confidence95": [
+      0.07185079354015506,
+      0.08180034100386963
+    ],
+    "delta": 0.07653543307086608,
+    "recipeClusters": 1353
+  },
+  "baselineAccuracy": 0.8435770528683915,
+  "baselineBytes": 906675,
+  "cpuLatencyMs": {
+    "baseline": {
+      "median": 0.05101619171909988,
+      "p95BlockAverage": 0.05133095110068098
+    },
+    "optimized": {
+      "median": 0.09637487164582126,
+      "p95BlockAverage": 0.09805096269701608
+    }
+  },
+  "latencyDescription": "CPUExecutionProvider, one thread, batch=1, same server/process; 30 interleaved blocks of 128 real states after warmup",
+  "limitations": [
+    "Repeated historical holdout; not a new independent dataset.",
+    "Action agreement and CPU latency do not establish complete crafting success or shorter plans."
+  ],
+  "optimizedAccuracy": 0.9201124859392575,
+  "optimizedBytes": 1815378,
+  "samples": 44450,
+  "sourceDataFingerprint": "e30bb5d2275672f08d4123f4a8d993efe0658942e89e80d2eeb577d82105f71d",
+  "strictExperts": {
+    "confidence95": [
+      0.04238423983710927,
+      0.0761904761904762
+    ],
+    "delta": 0.059427105600684094,
+    "recipeClusters": 48
+  }
+}

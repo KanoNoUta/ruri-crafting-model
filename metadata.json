@@ -1,0 +1,499 @@
+{
+  "actionVocab": {
+    "actions": [
+      {
+        "actionId": 1,
+        "modelIndex": 0,
+        "name": "BasicSynthesis"
+      },
+      {
+        "actionId": 2,
+        "modelIndex": 1,
+        "name": "CarefulSynthesis"
+      },
+      {
+        "actionId": 3,
+        "modelIndex": 2,
+        "name": "RapidSynthesis"
+      },
+      {
+        "actionId": 4,
+        "modelIndex": 3,
+        "name": "MuscleMemory"
+      },
+      {
+        "actionId": 6,
+        "modelIndex": 4,
+        "name": "Groundwork"
+      },
+      {
+        "actionId": 7,
+        "modelIndex": 5,
+        "name": "IntensiveSynthesis"
+      },
+      {
+        "actionId": 9,
+        "modelIndex": 6,
+        "name": "Groundwork2"
+      },
+      {
+        "actionId": 10,
+        "modelIndex": 7,
+        "name": "PrudentSynthesis"
+      },
+      {
+        "actionId": 12,
+        "modelIndex": 8,
+        "name": "DelicateSynthesis"
+      },
+      {
+        "actionId": 100,
+        "modelIndex": 9,
+        "name": "BasicTouch"
+      },
+      {
+        "actionId": 101,
+        "modelIndex": 10,
+        "name": "StandardTouch"
+      },
+      {
+        "actionId": 102,
+        "modelIndex": 11,
+        "name": "AdvancedTouch"
+      },
+      {
+        "actionId": 103,
+        "modelIndex": 12,
+        "name": "HastyTouch"
+      },
+      {
+        "actionId": 104,
+        "modelIndex": 13,
+        "name": "ByregotsBlessing"
+      },
+      {
+        "actionId": 105,
+        "modelIndex": 14,
+        "name": "PreciseTouch"
+      },
+      {
+        "actionId": 107,
+        "modelIndex": 15,
+        "name": "PrudentTouch"
+      },
+      {
+        "actionId": 110,
+        "modelIndex": 16,
+        "name": "Reflect"
+      },
+      {
+        "actionId": 111,
+        "modelIndex": 17,
+        "name": "PreparatoryTouch"
+      },
+      {
+        "actionId": 112,
+        "modelIndex": 18,
+        "name": "TrainedEye"
+      },
+      {
+        "actionId": 113,
+        "modelIndex": 19,
+        "name": "RefinedTouch"
+      },
+      {
+        "actionId": 114,
+        "modelIndex": 20,
+        "name": "DaringTouch"
+      },
+      {
+        "actionId": 200,
+        "modelIndex": 21,
+        "name": "TricksOfTheTrade"
+      },
+      {
+        "actionId": 300,
+        "modelIndex": 22,
+        "name": "MastersMend"
+      },
+      {
+        "actionId": 301,
+        "modelIndex": 23,
+        "name": "WasteNot"
+      },
+      {
+        "actionId": 302,
+        "modelIndex": 24,
+        "name": "WasteNot2"
+      },
+      {
+        "actionId": 303,
+        "modelIndex": 25,
+        "name": "Manipulation"
+      },
+      {
+        "actionId": 304,
+        "modelIndex": 26,
+        "name": "ImmaculateMend"
+      },
+      {
+        "actionId": 401,
+        "modelIndex": 27,
+        "name": "Veneration"
+      },
+      {
+        "actionId": 402,
+        "modelIndex": 28,
+        "name": "Innovation"
+      },
+      {
+        "actionId": 403,
+        "modelIndex": 29,
+        "name": "GreatStrides"
+      },
+      {
+        "actionId": 404,
+        "modelIndex": 30,
+        "name": "QuickInnovation"
+      },
+      {
+        "actionId": 500,
+        "modelIndex": 31,
+        "name": "Observe"
+      },
+      {
+        "actionId": 600,
+        "modelIndex": 32,
+        "name": "HeartAndSoul"
+      },
+      {
+        "actionId": 601,
+        "modelIndex": 33,
+        "name": "CarefulObservation"
+      },
+      {
+        "actionId": 602,
+        "modelIndex": 34,
+        "name": "TrainedPerfection"
+      },
+      {
+        "actionId": 700,
+        "modelIndex": 35,
+        "name": "FinalAppraisal"
+      }
+    ],
+    "kind": "Ruri.Core.Crafting.CraftAction"
+  },
+  "architecture": {
+    "architecture": "expertRouter",
+    "expert": {
+      "dropout": 0.02,
+      "hiddenSizes": [
+        512,
+        256,
+        128
+      ]
+    },
+    "expertFeatureIndex": 20,
+    "general": {
+      "dropout": 0.02,
+      "hiddenSizes": [
+        512,
+        256,
+        128
+      ],
+      "normalizeInputs": true
+    }
+  },
+  "checkpoint": {
+    "dataFingerprint": "e30bb5d2275672f08d4123f4a8d993efe0658942e89e80d2eeb577d82105f71d",
+    "epoch": 178,
+    "metrics": {
+      "validation": {
+        "cosmicEstimatedTop1": 0.8862876296043396,
+        "expertStrictTop1": 0.7936585545539856,
+        "maskedIllegalActionRate": 0.0,
+        "ordinaryTop1": 0.923071563243866,
+        "policyNll": 0.3309534788131714,
+        "remainingStepsMae": 0.6010100245475769,
+        "top1": 0.916968584060669,
+        "top3": 0.9856423735618591,
+        "valueMae": 0.00043112592538818717
+      }
+    }
+  },
+  "classWeighting": "uniform action CE; expert-weighted training; validation-selected domain branches",
+  "createdUtc": "2026-09-08T08:48:29.038113+00:00",
+  "featureEncoder": {
+    "dimension": 106,
+    "featureNames": [
+      "craftState.statCraftsmanship/10000",
+      "craftState.statControl/10000",
+      "craftState.statCP/2000",
+      "craftState.statLevel/100",
+      "craftState.classJobId/20",
+      "craftState.craftLevel/1000",
+      "craftState.craftDurability/200",
+      "craftState.craftProgress/100000",
+      "craftState.craftQualityMax/200000",
+      "craftState.craftProgressDivider/1000",
+      "craftState.craftProgressModifier/1000",
+      "craftState.craftQualityDivider/1000",
+      "craftState.craftQualityModifier/1000",
+      "craftState.conditionFlags/65535",
+      "craftState.requiredQuality/200000",
+      "craftState.initialQuality/200000",
+      "craftState.unlockedManipulation",
+      "craftState.specialist",
+      "craftState.canHq",
+      "craftState.requireHq",
+      "craftState.isExpert",
+      "craftState.isCollectable",
+      "craftState.hasEnhancedGoodCondition",
+      "stepState.durability/craftState.craftDurability",
+      "stepState.progress/craftState.craftProgress",
+      "stepState.quality/craftState.craftQualityMax",
+      "stepState.remainingCP/craftState.statCP",
+      "stepState.index/100",
+      "stepState.carefulObservationLeft/3",
+      "stepState.expedienceSteps/4",
+      "stepState.wasteNotSteps/8",
+      "stepState.manipulationSteps/8",
+      "stepState.innerQuietStacks/10",
+      "stepState.venerationSteps/4",
+      "stepState.innovationSteps/4",
+      "stepState.greatStridesSteps/3",
+      "stepState.finalAppraisalSteps/5",
+      "stepState.muscleMemorySteps/5",
+      "stepState.heartAndSoulAvailable",
+      "stepState.hasHeartAndSoul",
+      "stepState.trainedPerfectionAvailable",
+      "stepState.hasTrainedPerfection",
+      "stepState.quickInnovationAvailable",
+      "stepState.hasWasteNot",
+      "stepState.hasManipulation",
+      "stepState.hasVeneration",
+      "stepState.hasInnovation",
+      "stepState.hasGreatStrides",
+      "stepState.hasFinalAppraisal",
+      "stepState.hasMuscleMemory",
+      "stepState.hasExpedience",
+      "stepState.condition==Normal",
+      "stepState.condition==Good",
+      "stepState.condition==Excellent",
+      "stepState.condition==Poor",
+      "stepState.condition==Centered",
+      "stepState.condition==Sturdy",
+      "stepState.condition==Pliant",
+      "stepState.condition==Malleable",
+      "stepState.condition==Primed",
+      "stepState.condition==GoodOmen",
+      "stepState.condition==Robust",
+      "stepState.previousAction==BasicSynthesis",
+      "stepState.previousAction==CarefulSynthesis",
+      "stepState.previousAction==RapidSynthesis",
+      "stepState.previousAction==MuscleMemory",
+      "stepState.previousAction==Groundwork",
+      "stepState.previousAction==IntensiveSynthesis",
+      "stepState.previousAction==Groundwork2",
+      "stepState.previousAction==PrudentSynthesis",
+      "stepState.previousAction==DelicateSynthesis",
+      "stepState.previousAction==BasicTouch",
+      "stepState.previousAction==StandardTouch",
+      "stepState.previousAction==AdvancedTouch",
+      "stepState.previousAction==HastyTouch",
+      "stepState.previousAction==ByregotsBlessing",
+      "stepState.previousAction==PreciseTouch",
+      "stepState.previousAction==PrudentTouch",
+      "stepState.previousAction==Reflect",
+      "stepState.previousAction==PreparatoryTouch",
+      "stepState.previousAction==TrainedEye",
+      "stepState.previousAction==RefinedTouch",
+      "stepState.previousAction==DaringTouch",
+      "stepState.previousAction==TricksOfTheTrade",
+      "stepState.previousAction==MastersMend",
+      "stepState.previousAction==WasteNot",
+      "stepState.previousAction==WasteNot2",
+      "stepState.previousAction==Manipulation",
+      "stepState.previousAction==ImmaculateMend",
+      "stepState.previousAction==Veneration",
+      "stepState.previousAction==Innovation",
+      "stepState.previousAction==GreatStrides",
+      "stepState.previousAction==QuickInnovation",
+      "stepState.previousAction==Observe",
+      "stepState.previousAction==HeartAndSoul",
+      "stepState.previousAction==CarefulObservation",
+      "stepState.previousAction==TrainedPerfection",
+      "stepState.previousAction==FinalAppraisal",
+      "stepState.previousAction==UnknownOrNone",
+      "goal.kind==CompleteOnly",
+      "goal.kind==MeetCollectableThreshold",
+      "goal.kind==MaximizeHqQuality",
+      "goal.kind==MaximizeExpectedQuality",
+      "goal.qualityThreshold/craftState.craftQualityMax",
+      "goal.qualityThresholdIsNull",
+      "goal.requiredQuality/craftState.craftQualityMax"
+    ],
+    "version": 2
+  },
+  "formatVersion": 1,
+  "inputNormalization": "embedded per-branch normalization where configured",
+  "inputs": {
+    "features": {
+      "dtype": "float32",
+      "shape": [
+        "batch",
+        106
+      ]
+    },
+    "legal_mask": {
+      "dtype": "bool",
+      "shape": [
+        "batch",
+        36
+      ]
+    }
+  },
+  "masking": "policy_logits are set to -10000 where legal_mask is false",
+  "onnxFile": "ruri-craft-g1.onnx",
+  "onnxOpset": 17,
+  "onnxSha256": "eac1b6dbe7f2963e57910200ae6692f1f969e04e9e1caf878195e74a472a02d3",
+  "outputs": {
+    "policy_logits": {
+      "dtype": "float32",
+      "shape": [
+        "batch",
+        36
+      ]
+    },
+    "remaining_steps": {
+      "dtype": "float32",
+      "shape": [
+        "batch"
+      ]
+    },
+    "value": {
+      "dtype": "float32",
+      "shape": [
+        "batch"
+      ]
+    }
+  },
+  "remainingStepsTarget": "teacher.expectedSteps",
+  "schemaVersion": 1,
+  "selection": {
+    "expert": {
+      "checkpoint": "checkpoints/warm-cosine/best-eligible.pt",
+      "eligible": true,
+      "epoch": 93,
+      "metrics": {
+        "cosmicEstimatedTop1": 0.8862876296043396,
+        "expertStrictTop1": 0.7936585545539856,
+        "maskedIllegalActionRate": 0.0,
+        "ordinaryTop1": 0.8968152403831482,
+        "policyNll": 0.3100649416446686,
+        "remainingStepsMae": 0.6551308631896973,
+        "top1": 0.8920745849609375,
+        "top3": 0.9861503839492798,
+        "valueMae": 0.0005338364280760288
+      },
+      "name": "warm-cosine",
+      "score": 0.8674705773591995
+    },
+    "general": {
+      "checkpoint": "checkpoints/normalized-cosine/best-eligible.pt",
+      "eligible": true,
+      "epoch": 178,
+      "metrics": {
+        "cosmicEstimatedTop1": 0.8662207126617432,
+        "expertStrictTop1": 0.7702438831329346,
+        "maskedIllegalActionRate": 0.0,
+        "ordinaryTop1": 0.923071563243866,
+        "policyNll": 0.365403413772583,
+        "remainingStepsMae": 0.5970395803451538,
+        "top1": 0.9157757759094238,
+        "top3": 0.9847809076309204,
+        "valueMae": 0.0004145256825722754
+      },
+      "name": "normalized-cosine",
+      "score": 0.8793928027153015
+    },
+    "method": "observable expert recipe flag routes two independently trained branches",
+    "revisionContext": "Domain routing added after regression observed on reused historical holdout; branch choices use validation only",
+    "usesRecipeIdAtInference": false,
+    "usesTeacherStatusAtInference": false,
+    "validation": {
+      "cosmicEstimatedTop1": 0.8862876296043396,
+      "expertStrictTop1": 0.7936585545539856,
+      "maskedIllegalActionRate": 0.0,
+      "ordinaryTop1": 0.923071563243866,
+      "policyNll": 0.3309534788131714,
+      "remainingStepsMae": 0.6010100245475769,
+      "top1": 0.916968584060669,
+      "top3": 0.9856423735618591,
+      "valueMae": 0.00043112592538818717
+    }
+  },
+  "supportedTeacherSchemaVersions": [
+    1,
+    2
+  ],
+  "trainingClassCounts": [
+    1004,
+    89,
+    316,
+    5683,
+    41539,
+    3776,
+    2103,
+    1149,
+    169537,
+    4662,
+    127,
+    18829,
+    82,
+    80,
+    4151,
+    1000,
+    4957,
+    32152,
+    23423,
+    74,
+    0,
+    96,
+    2012,
+    194,
+    5375,
+    2382,
+    4626,
+    9599,
+    20821,
+    1901,
+    0,
+    0,
+    6,
+    0,
+    587,
+    10
+  ],
+  "valueTarget": {
+    "CompleteOnly": "teacher.metrics.completionProbability",
+    "MaximizeExpectedQuality": "teacher.metrics.expectedQuality/craftState.craftQualityMax",
+    "MaximizeHqQuality": "teacher.metrics.hqProbability",
+    "MeetCollectableThreshold": "teacher.metrics.thresholdProbability"
+  },
+  "modelId": "RURI-Craft-G1",
+  "releaseVersion": "1.0.0-beta.1",
+  "license": "Apache-2.0",
+  "contractId": "ruri-craft-features-v2-actions-36",
+  "optimizerResumeSupported": false,
+  "pluginCompatibility": {
+    "status": "not-integrated",
+    "minimumVersion": null
+  },
+  "framework": {
+    "repository": "https://github.com/KanoNoUta/ruri-crafting-framework",
+    "version": "0.1.0",
+    "commit": "6789d18a97cb46c4a400e1e6d6de5a893030eade"
+  }
+}

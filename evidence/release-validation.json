@@ -1,0 +1,35 @@
+{
+  "verifiedUtc": "2026-09-08T09:59:59.679148+00:00",
+  "assessment": "Share with caveats",
+  "metricReconciliationPassed": true,
+  "benchmarkDenominatorsVerified": true,
+  "commonSuccessPairsVerified": true,
+  "artifactHashesVerified": [
+    "ruri-craft-g1.onnx",
+    "ruri-craft-g1.weights.pt",
+    "metadata.json"
+  ],
+  "modelId": "RURI-Craft-G1",
+  "version": "1.0.0-beta.1",
+  "sameStateDecisionMedianMs": {
+    "g1": 0.1701,
+    "nativeSearch": 193.00935
+  },
+  "ratioOfResponseMedians": 1134.6816578483247,
+  "frameworkCommit": "6789d18a97cb46c4a400e1e6d6de5a893030eade",
+  "newTrainingStarted": false,
+  "newTeacherBatchMerged": false,
+  "caveats": [
+    "Historical holdout reused; no new independent blind test.",
+    "24 saved states / 2 seeds are a small stratified continuation sample.",
+    "Response cost excludes loading, IPC, simulator and game action execution.",
+    "Native bounded search is not upstream Raphael; no optimality, energy or end-to-end speedup claim.",
+    "G1 did not reduce skill calls on the jointly successful trajectories."
+  ],
+  "sourceHashes": {
+    "baseline-holdout.json": "84d64f67f16f8e484352707807df19cd226fabaf34b879f04e0f4db4341a11bf",
+    "continuation-benchmark.json": "72e9bd3db39b92a6f22fca9a58fe5cce339a203debc8cfba0a0b8cd236d9fa3c",
+    "g1-holdout.json": "460e4a19ca6cb32248a2276247591ab9aada3ae5a45228084bf2c6a323319989",
+    "paired-comparison.json": "25313f18c632bd86e8faa50827e3c6890ec5115c5b1dc632d8b5804d6fdb6e6e"
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "latest": "RURI-Craft-G1",
+  "models": [
+    {
+      "id": "RURI-Craft-G1",
+      "displayName": "琉璃第一代生产模型",
+      "generation": 1,
+      "version": "1.0.0-beta.1",
+      "channel": "beta",
+      "license": "Apache-2.0",
+      "contractId": "ruri-craft-features-v2-actions-36",
+      "featureEncoderVersion": 2,
+      "inputDimension": 106,
+      "actionCount": 36,
+      "parameterCount": 451404,
+      "onnxOpset": 17,
+      "framework": {
+        "repository": "https://github.com/KanoNoUta/ruri-crafting-framework",
+        "version": "0.1.0",
+        "commit": "6789d18a97cb46c4a400e1e6d6de5a893030eade"
+      },
+      "dataFingerprint": "e30bb5d2275672f08d4123f4a8d993efe0658942e89e80d2eeb577d82105f71d",
+      "gameDataCatalogVersion": "2026.08.05.0000.0000",
+      "pluginCompatibility": {
+        "status": "not-integrated",
+        "minimumVersion": null
+      },
+      "files": {
+        "onnx": {
+          "name": "ruri-craft-g1.onnx",
+          "bytes": 1815378,
+          "sha256": "eac1b6dbe7f2963e57910200ae6692f1f969e04e9e1caf878195e74a472a02d3",
+          "url": "https://github.com/KanoNoUta/ruri-crafting-model/releases/download/v1.0.0-beta.1/ruri-craft-g1.onnx"
+        },
+        "weights": {
+          "name": "ruri-craft-g1.weights.pt",
+          "bytes": 1828784,
+          "sha256": "2888d2a3e29a88d4d093b08ef73e4a8facfe35ad1ba763a35940aa9e891b8c6a",
+          "url": "https://github.com/KanoNoUta/ruri-crafting-model/releases/download/v1.0.0-beta.1/ruri-craft-g1.weights.pt"
+        },
+        "metadata": {
+          "name": "metadata.json",
+          "bytes": 13909,
+          "sha256": "3e1c794cf1e16bd35de50d2a1e8472fdf4ba3b533b4f87bd1db4d1e912361bec",
+          "url": "https://github.com/KanoNoUta/ruri-crafting-model/releases/download/v1.0.0-beta.1/metadata.json"
+        },
+        "bundle": {
+          "name": "ruri-craft-g1-v1.0.0-beta.1.zip",
+          "bytes": 3381639,
+          "sha256": "e01e546ef735cbefe8e4b7ac84edeffe6082804f2180653c4c54766606a8fb1f",
+          "url": "https://github.com/KanoNoUta/ruri-crafting-model/releases/download/v1.0.0-beta.1/ruri-craft-g1-v1.0.0-beta.1.zip"
+        }
+      }
+    }
+  ]
+}

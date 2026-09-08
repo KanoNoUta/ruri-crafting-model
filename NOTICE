@@ -1,0 +1,9 @@
+RURI-Craft G1
+Copyright 2026 KanoNoUta and contributors
+
+The model weights, ONNX export, original documentation and examples are released
+under Apache License 2.0. This license covers the released model artifacts and
+does not grant rights in third-party games, trademarks, game artwork or assets.
+
+Training framework: https://github.com/KanoNoUta/ruri-crafting-framework
+Artisan and Raphael acknowledgments: see the framework THIRD_PARTY_NOTICES.md.

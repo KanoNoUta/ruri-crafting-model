@@ -35,7 +35,7 @@
 G1 的主要价值是快速提供技能候选，适合作为混合求解的模型分支。本页分别展示与本地传统搜索器的对照，以及与旧神经网络的训练改进。
 
 > [!NOTE]
-> 当前为研究测试版，**尚未集成或发布到插件**。留存的新教师数据尚未加入这一代模型。
+> 当前为研究测试版，**本地插件已接入模型优先、传统算法回退并通过离线测试，尚未发布插件版本或完成游戏实测**。留存的新教师数据尚未加入这一代模型。
 
 <p align="center">
   <a href="#下载与使用">下载与使用</a> ·
@@ -320,9 +320,37 @@ python examples/predict.py --model artifacts/ruri-craft-g1.onnx --metadata metad
 - 两种方法使用同一套规则模拟器，每步都读取实际模拟结果重新决策。
 - 达标要求完成进度且满足原品质目标；失败、无建议和耗尽步数都留在分母中。
 - 每状态的两个种子共享起点，不能算成两个独立配方。
-- 本次对照不启用模型失败后的算法回退，不代表尚未完成接入的混合系统最终效果。
+- 本次对照不启用模型失败后的算法回退，不代表混合系统最终效果。
 
 </details>
+
+### 游戏内制作耗时估算
+
+技能执行也需要时间。按 **每次技能 3 秒**、决策与技能依次执行进行简单估算：
+
+**剩余制作时间 = 实际模拟技能次数 × 3 秒 + 该轨迹累计决策时间。**
+
+取上面两种方法**共同达标的同一批 30 对轨迹**（普通 15 对、专家 15 对），逐条计算后求平均：
+
+<table align="center">
+<thead><tr><th align="center">每条续作平均</th><th align="center">传统本地搜索</th><th align="center">RURI-Craft G1</th></tr></thead>
+<tbody>
+<tr><td align="center">实际模拟技能次数</td><td align="center">4.67 次</td><td align="center">5.60 次</td></tr>
+<tr><td align="center">技能执行时间（估算）</td><td align="center">14.00 秒</td><td align="center">16.80 秒</td></tr>
+<tr><td align="center">决策时间（已测）</td><td align="center">0.512 秒</td><td align="center">0.00155 秒</td></tr>
+<tr><td align="center"><strong>总剩余时间（估算）</strong></td><td align="center"><strong>14.51 秒</strong></td><td align="center"><strong>16.80 秒</strong></td></tr>
+</tbody>
+</table>
+
+<p align="center">
+  <img src="assets/crafting-duration.png" alt="30 对共同达标续作，按每技能 3 秒估算，传统搜索平均剩余 14.51 秒、G1 16.80 秒；包含技能执行与决策时间" width="800">
+</p>
+
+在这批样本中，G1 平均多用约 **0.93 次技能**，节省的决策时间未抵消技能执行时间，总剩余时间约多 **2.29 秒（15.8%）**。按每技能 2 秒估算，两者为 **9.85 秒 / 11.20 秒**，模型仍约多 1.36 秒。因此，当前证据支持“更快给出候选”，尚不支持“游戏内制作更快”。
+
+这是从保存的初始或中间状态继续制作的**剩余耗时估算**，不是整件配方从零制作，也不是客户端实测。实际插件的技能间隔、等待状态、菜单及网络延迟会改变时间；缓存或宏还可能减少传统算法的决策开销。此处只比较共同成功的轨迹，未计失败重试，也未计混合系统的验证与回退开销。
+
+[查看逐条估算与 2–3 秒敏感性结果](evidence/crafting-duration-estimate.json) · [计算口径](docs/BENCHMARKS.md#游戏内剩余制作时间估算)
 
 ### 计算代价
 
@@ -409,7 +437,7 @@ G1 用双分支换取更好的技能一致率：
 </tbody>
 </table>
 
-生成图表：安装 Matplotlib 3.9.4 后运行 `python scripts/render_charts.py` 和 `python scripts/render_solver_comparison.py`。中文字体使用微软雅黑或 Noto Sans CJK SC。
+生成图表：安装 Matplotlib 3.9.4 后运行 `python scripts/render_charts.py`、`python scripts/render_solver_comparison.py` 和 `python scripts/render_crafting_duration.py`。中文字体使用微软雅黑或 Noto Sans CJK SC。
 
 ---
 

@@ -1,0 +1,455 @@
+{
+  "schemaVersion": 1,
+  "estimateOnly": true,
+  "source": "evidence/continuation-benchmark.json",
+  "sourceSha256": "72e9bd3db39b92a6f22fca9a58fe5cce339a203debc8cfba0a0b8cd236d9fa3c",
+  "pairedTrajectories": 30,
+  "independentStartingStates": 16,
+  "segments": {
+    "expertStrict": 15,
+    "ordinary": 15
+  },
+  "assumptions": [
+    "Uniform 2 or 3 seconds per skill; decisions executed serially between skills.",
+    "Remaining work from saved initial/intermediate states, not complete recipes from zero.",
+    "No loading, IPC, menus, network jitter, failed attempts, retries or hybrid verification/fallback."
+  ],
+  "scenarios": [
+    {
+      "secondsPerSkill": 2,
+      "methods": {
+        "nativeSearch": {
+          "meanSkillCalls": 4.666666666666667,
+          "medianSkillCalls": 3.0,
+          "meanExecutionSeconds": 9.333333333333334,
+          "meanDecisionSeconds": 0.5121357066666666,
+          "meanTotalSeconds": 9.84546904,
+          "medianTotalSeconds": 6.251333450000001
+        },
+        "model": {
+          "meanSkillCalls": 5.6,
+          "medianSkillCalls": 4.0,
+          "meanExecutionSeconds": 11.2,
+          "meanDecisionSeconds": 0.00155225,
+          "meanTotalSeconds": 11.20155225,
+          "medianTotalSeconds": 8.00128705
+        }
+      },
+      "meanModelMinusSearchSeconds": 1.3560832100000013
+    },
+    {
+      "secondsPerSkill": 3,
+      "methods": {
+        "nativeSearch": {
+          "meanSkillCalls": 4.666666666666667,
+          "medianSkillCalls": 3.0,
+          "meanExecutionSeconds": 14,
+          "meanDecisionSeconds": 0.5121357066666666,
+          "meanTotalSeconds": 14.512135706666667,
+          "medianTotalSeconds": 9.25133345
+        },
+        "model": {
+          "meanSkillCalls": 5.6,
+          "medianSkillCalls": 4.0,
+          "meanExecutionSeconds": 16.8,
+          "meanDecisionSeconds": 0.00155225,
+          "meanTotalSeconds": 16.80155225,
+          "medianTotalSeconds": 12.00128705
+        }
+      },
+      "meanModelMinusSearchSeconds": 2.289416543333333
+    }
+  ],
+  "pairs": [
+    {
+      "caseId": "merged-1c089dde55c724b48b53aacf4112c6b93e3074b05f98974efad6e38b90689729",
+      "seed": 20260908,
+      "segment": "expertStrict",
+      "nativeSearch": {
+        "skillCalls": 3,
+        "decisionSeconds": 0.25879090000000005
+      },
+      "model": {
+        "skillCalls": 4,
+        "decisionSeconds": 0.001155
+      }
+    },
+    {
+      "caseId": "merged-1c089dde55c724b48b53aacf4112c6b93e3074b05f98974efad6e38b90689729",
+      "seed": 20260909,
+      "segment": "expertStrict",
+      "nativeSearch": {
+        "skillCalls": 3,
+        "decisionSeconds": 0.243876
+      },
+      "model": {
+        "skillCalls": 4,
+        "decisionSeconds": 0.0014191
+      }
+    },
+    {
+      "caseId": "merged-202a897ba7c4fe32a01751162d44548d9b884ff9fd9b8865abce0e370457344a",
+      "seed": 20260908,
+      "segment": "expertStrict",
+      "nativeSearch": {
+        "skillCalls": 10,
+        "decisionSeconds": 0.4402594
+      },
+      "model": {
+        "skillCalls": 11,
+        "decisionSeconds": 0.0032801
+      }
+    },
+    {
+      "caseId": "merged-202a897ba7c4fe32a01751162d44548d9b884ff9fd9b8865abce0e370457344a",
+      "seed": 20260909,
+      "segment": "expertStrict",
+      "nativeSearch": {
+        "skillCalls": 9,
+        "decisionSeconds": 0.5378006000000001
+      },
+      "model": {
+        "skillCalls": 12,
+        "decisionSeconds": 0.0038019
+      }
+    },
+    {
+      "caseId": "merged-2ee1a9edc0c876009dacf50a31d7368264ebe1b2b110cd7e2db067e24b237025",
+      "seed": 20260908,
+      "segment": "expertStrict",
+      "nativeSearch": {
+        "skillCalls": 12,
+        "decisionSeconds": 0.911787
+      },
+      "model": {
+        "skillCalls": 11,
+        "decisionSeconds": 0.0027925
+      }
+    },
+    {
+      "caseId": "merged-2ee1a9edc0c876009dacf50a31d7368264ebe1b2b110cd7e2db067e24b237025",
+      "seed": 20260909,
+      "segment": "expertStrict",
+      "nativeSearch": {
+        "skillCalls": 10,
+        "decisionSeconds": 0.7943232
+      },
+      "model": {
+        "skillCalls": 11,
+        "decisionSeconds": 0.0024966
+      }
+    },
+    {
+      "caseId": "merged-43d57ec53e7e84063564324cc5a41dbd3355d5cb77aa3901fba0e32e29311a0d",
+      "seed": 20260909,
+      "segment": "expertStrict",
+      "nativeSearch": {
+        "skillCalls": 11,
+        "decisionSeconds": 0.7176039
+      },
+      "model": {
+        "skillCalls": 16,
+        "decisionSeconds": 0.0041973
+      }
+    },
+    {
+      "caseId": "merged-4a92d943eed7410b806f9afb11df14ec5762388f71755880f4b876bff1f8782b",
+      "seed": 20260908,
+      "segment": "ordinary",
+      "nativeSearch": {
+        "skillCalls": 1,
+        "decisionSeconds": 0.0001025
+      },
+      "model": {
+        "skillCalls": 1,
+        "decisionSeconds": 0.0005792000000000001
+      }
+    },
+    {
+      "caseId": "merged-4a92d943eed7410b806f9afb11df14ec5762388f71755880f4b876bff1f8782b",
+      "seed": 20260909,
+      "segment": "ordinary",
+      "nativeSearch": {
+        "skillCalls": 1,
+        "decisionSeconds": 0.000121
+      },
+      "model": {
+        "skillCalls": 1,
+        "decisionSeconds": 0.00025130000000000004
+      }
+    },
+    {
+      "caseId": "merged-5b9efe7fc34836fd20f957df5633997f26859228fe5b6cd94177e5bb894c3b00",
+      "seed": 20260908,
+      "segment": "ordinary",
+      "nativeSearch": {
+        "skillCalls": 1,
+        "decisionSeconds": 0.0001196
+      },
+      "model": {
+        "skillCalls": 1,
+        "decisionSeconds": 0.0002187
+      }
+    },
+    {
+      "caseId": "merged-5b9efe7fc34836fd20f957df5633997f26859228fe5b6cd94177e5bb894c3b00",
+      "seed": 20260909,
+      "segment": "ordinary",
+      "nativeSearch": {
+        "skillCalls": 1,
+        "decisionSeconds": 0.00011169999999999999
+      },
+      "model": {
+        "skillCalls": 1,
+        "decisionSeconds": 0.0002299
+      }
+    },
+    {
+      "caseId": "merged-669fff2fd85afee89acb9a227ec7b562599f3d2f5e7b7eb6cc87c991dd4e415c",
+      "seed": 20260908,
+      "segment": "ordinary",
+      "nativeSearch": {
+        "skillCalls": 1,
+        "decisionSeconds": 0.0001367
+      },
+      "model": {
+        "skillCalls": 1,
+        "decisionSeconds": 0.0002252
+      }
+    },
+    {
+      "caseId": "merged-669fff2fd85afee89acb9a227ec7b562599f3d2f5e7b7eb6cc87c991dd4e415c",
+      "seed": 20260909,
+      "segment": "ordinary",
+      "nativeSearch": {
+        "skillCalls": 1,
+        "decisionSeconds": 0.0001437
+      },
+      "model": {
+        "skillCalls": 1,
+        "decisionSeconds": 0.0002229
+      }
+    },
+    {
+      "caseId": "merged-6ec1bfb7ca1fd58d96eaf9cd49c13f97401f2c3e94535a34ed69a193b4d85c84",
+      "seed": 20260908,
+      "segment": "ordinary",
+      "nativeSearch": {
+        "skillCalls": 6,
+        "decisionSeconds": 3.0825007
+      },
+      "model": {
+        "skillCalls": 8,
+        "decisionSeconds": 0.0021587999999999998
+      }
+    },
+    {
+      "caseId": "merged-7424fabfa916d724bb93b7ba8f53017c271f71bbf681e640b1fad81c573f4b61",
+      "seed": 20260908,
+      "segment": "expertStrict",
+      "nativeSearch": {
+        "skillCalls": 4,
+        "decisionSeconds": 0.2401353
+      },
+      "model": {
+        "skillCalls": 5,
+        "decisionSeconds": 0.0014235
+      }
+    },
+    {
+      "caseId": "merged-7424fabfa916d724bb93b7ba8f53017c271f71bbf681e640b1fad81c573f4b61",
+      "seed": 20260909,
+      "segment": "expertStrict",
+      "nativeSearch": {
+        "skillCalls": 4,
+        "decisionSeconds": 0.2247532
+      },
+      "model": {
+        "skillCalls": 5,
+        "decisionSeconds": 0.0013931
+      }
+    },
+    {
+      "caseId": "merged-95595b325cef82995a80993a001f2775633dd5f4e8354107d4754f3b9f05ee0f",
+      "seed": 20260908,
+      "segment": "expertStrict",
+      "nativeSearch": {
+        "skillCalls": 6,
+        "decisionSeconds": 0.719048
+      },
+      "model": {
+        "skillCalls": 8,
+        "decisionSeconds": 0.0027692000000000003
+      }
+    },
+    {
+      "caseId": "merged-95595b325cef82995a80993a001f2775633dd5f4e8354107d4754f3b9f05ee0f",
+      "seed": 20260909,
+      "segment": "expertStrict",
+      "nativeSearch": {
+        "skillCalls": 6,
+        "decisionSeconds": 0.7086077000000001
+      },
+      "model": {
+        "skillCalls": 10,
+        "decisionSeconds": 0.0027543000000000003
+      }
+    },
+    {
+      "caseId": "merged-97ad60520472c28ef947d636fec9957482cf7158371ddb81ee0b1565fb218f42",
+      "seed": 20260908,
+      "segment": "expertStrict",
+      "nativeSearch": {
+        "skillCalls": 9,
+        "decisionSeconds": 1.5964499
+      },
+      "model": {
+        "skillCalls": 11,
+        "decisionSeconds": 0.0029714
+      }
+    },
+    {
+      "caseId": "merged-97ad60520472c28ef947d636fec9957482cf7158371ddb81ee0b1565fb218f42",
+      "seed": 20260909,
+      "segment": "expertStrict",
+      "nativeSearch": {
+        "skillCalls": 9,
+        "decisionSeconds": 1.6127013
+      },
+      "model": {
+        "skillCalls": 9,
+        "decisionSeconds": 0.001996
+      }
+    },
+    {
+      "caseId": "merged-b0531f3ef71fcd7aac6d1f987babd324e8c7f25872691fcc136da155e129b3c6",
+      "seed": 20260908,
+      "segment": "ordinary",
+      "nativeSearch": {
+        "skillCalls": 2,
+        "decisionSeconds": 0.0056805
+      },
+      "model": {
+        "skillCalls": 2,
+        "decisionSeconds": 0.0004656
+      }
+    },
+    {
+      "caseId": "merged-b0531f3ef71fcd7aac6d1f987babd324e8c7f25872691fcc136da155e129b3c6",
+      "seed": 20260909,
+      "segment": "ordinary",
+      "nativeSearch": {
+        "skillCalls": 2,
+        "decisionSeconds": 0.0011761
+      },
+      "model": {
+        "skillCalls": 2,
+        "decisionSeconds": 0.0004982000000000001
+      }
+    },
+    {
+      "caseId": "merged-ba402b470534f5187c54ee2eba445ede60f53a7f431321b9a9ff85a101b4e8ee",
+      "seed": 20260908,
+      "segment": "ordinary",
+      "nativeSearch": {
+        "skillCalls": 3,
+        "decisionSeconds": 0.0173292
+      },
+      "model": {
+        "skillCalls": 3,
+        "decisionSeconds": 0.0007844999999999999
+      }
+    },
+    {
+      "caseId": "merged-ba402b470534f5187c54ee2eba445ede60f53a7f431321b9a9ff85a101b4e8ee",
+      "seed": 20260909,
+      "segment": "ordinary",
+      "nativeSearch": {
+        "skillCalls": 3,
+        "decisionSeconds": 0.0183084
+      },
+      "model": {
+        "skillCalls": 3,
+        "decisionSeconds": 0.0006316000000000001
+      }
+    },
+    {
+      "caseId": "merged-ca5297b5c98c469ab89d0a4f15819a481846bfcaa180ae4c8a51df67e303a5a3",
+      "seed": 20260908,
+      "segment": "ordinary",
+      "nativeSearch": {
+        "skillCalls": 2,
+        "decisionSeconds": 0.0022545
+      },
+      "model": {
+        "skillCalls": 3,
+        "decisionSeconds": 0.0008307
+      }
+    },
+    {
+      "caseId": "merged-ca5297b5c98c469ab89d0a4f15819a481846bfcaa180ae4c8a51df67e303a5a3",
+      "seed": 20260909,
+      "segment": "ordinary",
+      "nativeSearch": {
+        "skillCalls": 2,
+        "decisionSeconds": 0.0019864
+      },
+      "model": {
+        "skillCalls": 3,
+        "decisionSeconds": 0.0008673
+      }
+    },
+    {
+      "caseId": "merged-ccf1b3ab1ac686fb885412f90dbc89c629daf2f05576d7d9be8b55969f5fc088",
+      "seed": 20260908,
+      "segment": "expertStrict",
+      "nativeSearch": {
+        "skillCalls": 8,
+        "decisionSeconds": 1.6015271
+      },
+      "model": {
+        "skillCalls": 10,
+        "decisionSeconds": 0.0028963
+      }
+    },
+    {
+      "caseId": "merged-ccf1b3ab1ac686fb885412f90dbc89c629daf2f05576d7d9be8b55969f5fc088",
+      "seed": 20260909,
+      "segment": "expertStrict",
+      "nativeSearch": {
+        "skillCalls": 8,
+        "decisionSeconds": 1.6260707
+      },
+      "model": {
+        "skillCalls": 9,
+        "decisionSeconds": 0.0025288
+      }
+    },
+    {
+      "caseId": "merged-f132ea442a2bfa2ea8d8f3c59b876712af8afe8c68b3b483e9ce3055b54143ac",
+      "seed": 20260908,
+      "segment": "ordinary",
+      "nativeSearch": {
+        "skillCalls": 1,
+        "decisionSeconds": 0.00018429999999999998
+      },
+      "model": {
+        "skillCalls": 1,
+        "decisionSeconds": 0.0004944
+      }
+    },
+    {
+      "caseId": "merged-f132ea442a2bfa2ea8d8f3c59b876712af8afe8c68b3b483e9ce3055b54143ac",
+      "seed": 20260909,
+      "segment": "ordinary",
+      "nativeSearch": {
+        "skillCalls": 1,
+        "decisionSeconds": 0.0001817
+      },
+      "model": {
+        "skillCalls": 1,
+        "decisionSeconds": 0.0002341
+      }
+    }
+  ]
+}

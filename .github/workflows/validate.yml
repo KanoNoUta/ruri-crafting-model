@@ -11,3 +11,4 @@ jobs:
         with:
           python-version: '3.12'
       - run: python scripts/validate_evidence.py
+      - run: python scripts/render_crafting_duration.py --check
